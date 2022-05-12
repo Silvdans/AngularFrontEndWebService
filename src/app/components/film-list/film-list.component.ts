@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class FilmListComponent implements OnInit {
   title = 'WebFront';
   results = [];
+  base_url = 'https://image.tmdb.org/t/p/original'
+  url : string = "http://localhost:8001/api/movies"
   constructor(public http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any>('https://api.themoviedb.org/3/discover/movie?api_key=165356acc658c8fec0740ab02219d1ab')
+    this.http.get<any>(this.url)
     .subscribe(response => {
-      this.results = response.results
+      this.results = response
     });
   }
 
