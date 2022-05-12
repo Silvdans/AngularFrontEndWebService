@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.filter{
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #202020;
+  margin-bottom: 10px;
+}
+
+
+nav{
+  line-height: 7vh;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav ul li{
+  font-size: 1em;
+  float: left;
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+nav ul::after{
+  content: "";
+  display: table;
+  clear: both;
+  font-size: 1em;
+}
+
+nav a{
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color:white;
+  border-bottom: 2px solid transparent;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+nav a:hover{
+
+  border-bottom: 2px solid #2D88FB;
+}
+
+.sous{
+  display: none;
+  background-color: #202020;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav > ul li:hover .sous{
+  display: flex;
+  flex-direction: column;
+}
+.sous li{
+  float: none;
+  width: 100%;
+  font-size:  15px;
+  line-height: 14px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  padding-left: 0;
+}
+.sous a{
+  width: 380%;
+  padding: 10px;
+  border-bottom: none;
+}
+.sous a:hover{
+  border-bottom: none;
+  color: #2762f3;
+  background-color: #101010;
+}
+.deroulant > a::after{
+  content:" ▼";
+  font-size: 12px;
+  color: #2762f3;
+}

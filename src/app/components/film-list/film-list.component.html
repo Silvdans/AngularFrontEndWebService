@@ -1,0 +1,23 @@
+
+<section class="movies_page">
+  <ul class="list_movies">
+
+      <li *ngFor="let result of results">
+
+        <a href="">
+          <div class="movie">
+
+              <div class="movie_picture">
+                <img src="{{'https://image.tmdb.org/t/p/w220_and_h330_face'+result['poster_path']}}"/>
+              </div>
+
+              <div class="info">
+
+
+              </div>
+
+          </div>
+        </a>
+      </li>
+  </ul>
+</section>

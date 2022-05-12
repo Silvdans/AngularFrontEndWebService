@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header{
+  height: 10vh;
+  background-color: #101010;
+  display: flex;
+  justify-content: space-between;
+  line-height: 10vh;
+
+}
+
+.title{
+  color: #2D88FB;
+  font-size: 2em;
+  margin-left: 90px;
+}
+
+
+.header li{
+  margin: 10px;
+  width: 150px;
+  height: 70%;
+  border-radius: 30px;
+  border: solid #2D88FB 1px;
+  color: white;
+  list-style-type:none;
+  font-size: 1.4em;
+  text-align: center;
+  line-height: 7.1vh;
+
+}
+
+.header li:hover{
+
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(45, 136, 251, 0.55);
+
+}
+
+.header a{
+  text-decoration: none;
+}
