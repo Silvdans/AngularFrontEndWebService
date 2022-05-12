@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MoviesService } from '../movies.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { MoviesService } from '../movies.service';
 })
 export class FilmListComponent implements OnInit {
   @Input() genre = {};
-
   title = 'WebFront';
   results = [];
   base_url = 'https://image.tmdb.org/t/p/original'

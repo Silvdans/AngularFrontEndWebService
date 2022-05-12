@@ -4,16 +4,11 @@
 
       <li *ngFor="let result of results">
 
-        <a href="">
+        <a [routerLink]="['/movies', result['id']]">
           <div class="movie">
 
               <div class="movie_picture">
                 <img src="{{base_url+result['poster_path']}}"/>
-              </div>
-
-              <div class="info">
-
-
               </div>
 
           </div>

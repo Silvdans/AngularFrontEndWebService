@@ -21,7 +21,7 @@
   border: solid 1px rgb(45, 136, 251) ;
   height: 90%;
   margin-top: 10px;
-  /* position: relative; */
+  z-index: 0;
 }
 
 .movie:hover{
@@ -53,25 +53,3 @@ padding: 20px;
   transition: 500ms;
     opacity: 0.2;
   }
-
-.info
-{
-  display:none;
-  background-color: aqua;
-  position: absolute;
-  top: 50%;
-  height: 50%;
-  width: 100%;
-}
-
-.info:hover img
-{
-  transition: 500ms;
-  opacity: 0.2;
-}
-
-.movie::after{
-  clear: both;
-}
-
-

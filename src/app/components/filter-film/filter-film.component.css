@@ -59,29 +59,31 @@ nav a:hover{
   background-color: #202020;
   position: absolute;
   width: 100%;
-  z-index: 1000;
+
 }
 
 nav > ul li:hover .sous{
   display: flex;
   flex-direction: column;
 }
-.sous li{
+.sous button{
   width: 100%;
   font-size:  15px;
   line-height: 14px;
   padding-bottom: 6px;
   padding-top: 6px;
   padding-left: 0;
+  background-color:#202020;
+  border: 0px;
+  color:#2D88FB;
+  z-index:99;
 }
-.sous a{
-  width: 380%;
-  border-bottom: none;
-}
-.sous a:hover{
-  border-bottom: none;
+
+.sous button:hover{
+  border-bottom: 2px solid #2D88FB;
   color: #2762f3;
-  background-color: #101010;
+  background-color: #202020;
+  cursor: pointer;
 }
 .deroulant > a::after{
   content:" ▼";

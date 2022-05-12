@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+/* import USER_CONTEXT_DEV from '../../../user_context.conf.js'; */
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class MoviesService {
 
   constructor(public http: HttpClient) { }
   url : string = "http://localhost:8001/api/movies"
-  url_genres : string = "http://localhost:8001/api/genres"
+  urlGenres : string = "http://localhost:8001/api/genres"
+  urlMovie : string = "http://localhost:8001/api/movies/"
   movies = []
 
   public getMovies(params : any) : Observable<[]>{
@@ -18,6 +20,10 @@ export class MoviesService {
   }
 
   public getGenres(): Observable<[]>{
-    return this.http.get<[]>(this.url_genres)
+    return this.http.get<[]>(this.urlGenres)
+  }
+
+  public getMovie(id : string | null): Observable<{}>{
+    return this.http.get<{}>(this.urlMovie+id)
   }
 }

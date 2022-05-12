@@ -8,11 +8,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class HomeComponent implements OnInit {
   constructor() { }
   genre = {}
+  movie : number = 0
   ngOnInit(): void {
   }
 
-  receiveGenre(genre_selected: {}){
-    this.genre = genre_selected
+  receiveGenre(genreSelected: {}){
+    this.genre = genreSelected
+  }
+  receiveMovie(movieIdSelected : number){
+    this.movie = movieIdSelected;
   }
 
 }

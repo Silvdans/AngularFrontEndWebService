@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.detail_film{
+  padding: 0px;
+  height: 77vh;
+  width: 100%;
+  display: flex;
+}
+
+.affiche_film{
+  height: 100%;
+  width: 50%;
+  background-color: aqua;
+  margin: 0px;
+  position: relative;
+}
+
+.favorite{
+
+  text-decoration: none;
+  position: absolute;
+  bottom: 40px;
+  left: 40%;
+
+}
+
+.favorite::after{
+  clear: both;
+}
+
+.info{
+  height: 100%;
+  width: 50%;
+  margin: 0;
+  color: rgb(0, 0, 0);
+}
