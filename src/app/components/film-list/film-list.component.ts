@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-film-list',
@@ -7,17 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./film-list.component.css']
 })
 export class FilmListComponent implements OnInit {
+  @Input() genre = {};
+
   title = 'WebFront';
   results = [];
   base_url = 'https://image.tmdb.org/t/p/original'
-  url : string = "http://localhost:8001/api/movies"
-  constructor(public http: HttpClient) {}
+
+  constructor(private moviesService : MoviesService) {}
 
   ngOnInit(): void {
-    this.http.get<any>(this.url)
-    .subscribe(response => {
+    this.setMovies()
+  }
+  ngOnChanges(changes: SimpleChanges){
+    this.setMovies()
+  }
+
+  setMovies(){
+    this.moviesService.getMovies(this.genre).subscribe(response =>{
       this.results = response
-    });
+    })
   }
 
 }

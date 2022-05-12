@@ -8,8 +8,8 @@ import { FilmListComponent } from './components/film-list/film-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentsComponent } from './components/components.component';
 import { DetailFilmComponent } from './components/detail-film/detail-film.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,13 +18,13 @@ import { DetailFilmComponent } from './components/detail-film/detail-film.compon
     FilmListComponent,
     HeaderComponent,
     HomeComponent,
-    ComponentsComponent,
     DetailFilmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule  
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
