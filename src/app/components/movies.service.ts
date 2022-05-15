@@ -1,14 +1,14 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 /* import USER_CONTEXT_DEV from '../../../user_context.conf.js'; */
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
-
-  constructor(public http: HttpClient) { }
+  buttonClicked: Subject<string>;
+  constructor(public http: HttpClient) {this.buttonClicked = new Subject<string>(); }
   url : string = "http://localhost:8001/api/movies"
   urlGenres : string = "http://localhost:8001/api/genres"
   urlMovie : string = "http://localhost:8001/api/movies/"
