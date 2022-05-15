@@ -1,12 +1,39 @@
-<section class="detail_film">
-  <div class="affiche_film">
+<section >
 
-      <a href="" class="favorite">Ajouter aux favoris</a>
+  <section >
 
-  </div>
-  <div class="info">
+      <div >
 
-      <h1>{{movie.title}}</h1>
-      <p>{{movie.overview}}</p>
-  </div>
+          <img src="{{base_url+movie['poster_path']}}" alt="">
+
+      </div>
+
+      <a (click)="addFavorite()" ><img src="" alt=""></a>
+      <br>
+
+      <label>Nombre de votes : {{movie.upvotes}}</label>
+      <br>
+      <button (click)="updateMovie()" >Ajouter un upvote</button>
+  </section>
+
+  <section>
+
+      <div >
+
+          <h1>{{movie.title}}</h1>
+          <p>{{movie.overview}}</p>
+      </div>
+
+      <section>
+          <mat-form-field appearance="fill">
+          <mat-label>Utilisateurs</mat-label>
+
+          <mat-select [(ngModel)]="selectedUser">
+              <mat-option *ngFor="let user of userList " [value]="user">{{user}}</mat-option>
+          </mat-select>
+
+          </mat-form-field>
+          <button (click)="recomAUser(selectedUser)" >Recommender</button>
+      </section>
+  </section>
 </section>

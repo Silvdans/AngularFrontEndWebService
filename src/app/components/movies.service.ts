@@ -12,8 +12,8 @@ export class MoviesService {
   url : string = "http://localhost:8001/api/movies"
   urlGenres : string = "http://localhost:8001/api/genres"
   urlMovie : string = "http://localhost:8001/api/movies/"
+  url_user : string = "http://localhost:8001/api/users/"
   movies = []
-
   public getMovies(params : any) : Observable<[]>{
     let parametres = new HttpParams().set('genres', params.id);
     return this.http.get<[]>(this.url, {params: parametres})
@@ -25,5 +25,19 @@ export class MoviesService {
 
   public getMovie(id : string | null): Observable<{}>{
     return this.http.get<{}>(this.urlMovie+id)
+  }
+
+  public updateUser(paramsUser : {}, user : string): Observable<{}>{
+    return this.http.put<{}>(this.url_user+user, paramsUser)
+  }
+
+  public getUser(user: string) : Observable<{}>{
+    return this.http.get<{}>(this.url_user+user);
+  }
+  public updateMovie(id_movie:string | null, params :{}): Observable<{}>{
+    return this.http.put<{}>(this.urlMovie+id_movie, params)
+  }
+  public getFavorites(id_user : string):Observable<[]>{
+    return this.http.get<[]>(this.url_user+id_user+"/favorites")
   }
 }

@@ -9,14 +9,16 @@ export class HomeComponent implements OnInit {
   constructor() { }
   genre = {}
   movie : number = 0
+  event : boolean = false;
   ngOnInit(): void {
   }
 
   receiveGenre(genreSelected: {}){
     this.genre = genreSelected
   }
-  receiveMovie(movieIdSelected : number){
-    this.movie = movieIdSelected;
+  receiveFavorites(event:any){
+    this.event = event
   }
+
 
 }

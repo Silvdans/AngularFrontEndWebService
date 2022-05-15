@@ -1,41 +1,11 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
 }
-
-
-.detail_film{
-  padding: 0px;
-  height: 77vh;
-  width: 100%;
-  display: flex;
+img{
+  width: 400px;
+  height: auto;
 }
-
-.affiche_film{
-  height: 100%;
-  width: 50%;
-  background-color: aqua;
-  margin: 0px;
-  position: relative;
-}
-
-.favorite{
-
-  text-decoration: none;
-  position: absolute;
-  bottom: 40px;
-  left: 40%;
-
-}
-
-.favorite::after{
-  clear: both;
-}
-
-.info{
-  height: 100%;
-  width: 50%;
-  margin: 0;
-  color: rgb(0, 0, 0);
+body{
+  color: black;
 }

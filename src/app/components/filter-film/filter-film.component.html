@@ -6,7 +6,7 @@
                   <button *ngFor="let genre of genres" (click)="genreSelected(genre)">{{genre['name']}}</button>
               </ul>
           </li>
-          <li class="link"><a href="#">Les mieux notés </a></li>
+          <li class="link" (click)="getFavorites()"><a >Favoris </a></li>
       </ul>
   </nav>
 </section>

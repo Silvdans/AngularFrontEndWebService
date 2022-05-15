@@ -7,8 +7,8 @@
   <section class="main">
 
     <!-- Component de la partie des filtres -->
-    <app-filter-film (newItemEvent)="receiveGenre($event)"></app-filter-film>
-    <app-film-list [genre]="genre"></app-film-list>
+    <app-filter-film (newItemEvent)="receiveGenre($event)" (favorites)="receiveFavorites($event)" ></app-filter-film>
+    <app-film-list [genre]="genre" [event]="event"></app-film-list>
 
   </section>
 

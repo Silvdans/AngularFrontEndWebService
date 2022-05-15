@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { USER_CONTEXT_DEV } from 'user_context.conf';
 import { MoviesService } from '../movies.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { MoviesService } from '../movies.service';
 })
 export class FilmListComponent implements OnInit {
   @Input() genre = {};
+  @Input() event = {};
   title = 'WebFront';
   results = [];
   base_url = 'https://image.tmdb.org/t/p/original'
+  user = {}
 
   constructor(private moviesService : MoviesService) {}
 
@@ -19,13 +22,24 @@ export class FilmListComponent implements OnInit {
     this.setMovies()
   }
   ngOnChanges(changes: SimpleChanges){
-    this.setMovies()
+    if(this.event == true){
+      this.getFavorites()
+    }
+    else{
+      this.setMovies()
+    }
+
   }
 
   setMovies(){
     this.moviesService.getMovies(this.genre).subscribe(response =>{
       this.results = response
     })
+  }
+  getFavorites(){
+    this.moviesService.getFavorites(USER_CONTEXT_DEV.usersCurrentId).subscribe(response => {
+      this.results = response;
+    });
   }
 
 }
